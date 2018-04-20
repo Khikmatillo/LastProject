@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Admin Panel</title>
+    <link rel='stylesheet' href='/webjars/bootstrap/3.1.0/css/bootstrap.min.css'>
+</head>
+<body>
+
+<div class="container">
+    <h1>Login as Admin</h1><br>
+    <form th:action="@{/admin/index}" th:object="${tempUser}" method="POST">
+        <input type="text" id="username" placeholder="email" th:field="*{email}"/> <br />
+        <input type="password" id="password" placeholder="password" th:field="*{password}"/> <br />
+        <br />
+        <input type="submit" value="Login" class="login loginmodal-submit" />
+    </form>
+    <div th:if="${errorMessage}" th:utext="${errorMessage}"
+         style="color:red;font-style:italic;"></div>
+</div>
+
+
+
+
+</body>
+
+</html>
